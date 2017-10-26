@@ -1,0 +1,84 @@
+@import 'vendors/bourbon/bourbon'
+@import 'vendors/neat/neat'
+@import 'vendors/normalize'
+
+body
+  box-sizing: border-box
+  font-size: 13px
+  font-weight: 400
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  font-family: 'Roboto', $helvetica
+
+.main-b
+  max-width: 1170px
+  margin: 25px auto
+
+.table-list
+  width: 100%
+  table-layout: fixed
+  margin: 0 auto
+  word-wrap: break-word
+
+  &__head
+    td
+      font-weight: bold
+      border-top: 1px solid #D8D8D8
+
+  td
+    +size(40px 30px)
+    border-bottom: 1px solid #D8D8D8
+    line-height: 30px
+    text-align: left
+    padding: 0 5px 0 5px
+    white-space: nowrap
+    overflow: hidden
+
+    img
+      margin-right: 5px
+
+    a
+      color: #006592
+      text-decoration: none
+
+    &[data-color='1']
+      background-color: #78D49E
+
+    &[data-color='2']
+      background-color: #CAEED8
+
+    &[data-color='4']
+      background-color: #FF99B0
+
+    &:nth-child(2)
+      min-width: 150px
+      width: 70%
+      position: relative
+
+      &:after
+        content: ''
+        +size(1px 100%)
+        top: 0
+        bottom: 0
+        right: 15px
+        position: absolute
+        background: #D8D8D8
+
+    &:last-child
+      background-color: #F9F9F7
+      text-align: right
+
+.annotation
+  margin-top: 15px
+
+  b
+    font-weight: bold
+
++media(max-width 484px)
+  .table-list
+    td:nth-child(4),
+    td:nth-child(5),
+    td:nth-child(6),
+    td:nth-child(7),
+    td:nth-child(8)
+      display: none
